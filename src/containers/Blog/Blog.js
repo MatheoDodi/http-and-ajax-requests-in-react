@@ -14,7 +14,7 @@ state = {
 }
     
     componentDidMount() {
-        axios.get('http://jsonplaceholder.typicode.com/posts')
+        axios.get('/posts')
             .then(response => {
                 const posts = response.data.slice(0, 4);
                 const updatedPosts = posts.map(post => {
@@ -25,7 +25,7 @@ state = {
                 })
                 this.setState({posts: updatedPosts});
             })
-            .catch(error => {
+            .catch(() => {
                     this.setState( {error: true} )
                 }
             );

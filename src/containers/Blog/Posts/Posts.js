@@ -9,7 +9,7 @@ class Posts extends Component {
     }
 
     postClickedHandler = (id) => {
-        this.setState({selectedPostId : id});
+        this.props.history.push({pathname: `/${id}`})
     }
 
     componentDidMount() {
@@ -32,7 +32,7 @@ class Posts extends Component {
     }
 
     render() {
-        let posts = this.state.posts.map(post => <Post clicked={() => this.postClickedHandler(post.id)} key={post.id} title={post.title} author={post.author}/>)
+        let posts = this.state.posts.map(post => <Post key={post.id} clicked={() => this.postClickedHandler(post.id)} title={post.title} author={post.author}/>)
         if (this.state.error) {
             posts = <p>Something Went Wrong!</p>
         }

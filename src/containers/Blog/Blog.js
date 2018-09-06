@@ -20,6 +20,7 @@ class Blog extends Component {
                 </header>
                 <Switch >
                     <Route path="/new-post" exact component={NewPost} />
+                    <Route path="/posts" component={Posts} />
                     <Route path="/" component={Posts} />
                 </Switch>
             </div>
